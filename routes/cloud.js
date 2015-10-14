@@ -82,6 +82,42 @@ router.post('/mobileAlert', function(req, res, next) {
 
 });
 
+
+router.post('/receiveAlert', function(req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', 'http://communitycloud.herokuapp.com');
+
+    // Request methods you wish to allow
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+    // Request headers you wish to allow
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+    // Set to true if you need the website to include cookies in the requests sent
+    // to the API (e.g. in case you use sessions)
+    res.setHeader('Access-Control-Allow-Credentials', true);
+
+
+    var newAlert = new Alert({
+        AlertType: req.body.alertType,
+        details: req.body.details,
+        location: req.body.location,
+        rating: req.body.rating,
+        createdBy: req.body.createdBy,
+        createdId: req.body.createdId,
+        created: Date.now()
+    });
+
+    newAlert.save(function (err) {
+        if(err){
+            console.log(err);
+            return next(err);
+        }
+        next(null);
+    });
+
+    res.sendStatus(200);
+});
+
 router.delete('/deleteAlerts', function(req, res, next) {
     console.log("trigger");
     Event.remove({},function(){console.log("Deleted Alerts");});

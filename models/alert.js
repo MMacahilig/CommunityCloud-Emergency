@@ -7,7 +7,8 @@ var alertSchema = new Schema({
     details: String,
     location: String,
     rating: String,
-    createdBy: Schema.ObjectId,
+    createdBy: String,
+    createdId: Schema.ObjectId,
     created: {type: Date, Default: Date.now()}
 });
 
