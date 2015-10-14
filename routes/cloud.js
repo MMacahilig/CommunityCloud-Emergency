@@ -15,13 +15,18 @@ router.get('/', restrict, function(req, res, next) {
     var dateString = startDate.getDate() + "/" + startDate.getMonth() + "/" + startDate.getYear();
     //var dateString = startDate.getDate() + "/" + (startDate.getMonth()+1) + "/" + startDate.getYear();
     //console.log(dateString);
-    Event.find().lean().exec(function(err, alert) {
+    var alerts;
+    Alert.find().lean().exec(function(err,alert){
+        alerts = alert;
+    });
+    Event.find().lean().exec(function(err, event) {
         console.log(alert);
         var vm = {
             firstName : req.user.firstName,
             lastName : req.user.lastName,
             id: req.user._id,
-            alert: alert,
+            event: event,
+            alert: alerts,
             created: dateString
         };
         res.render('cloud',vm);
