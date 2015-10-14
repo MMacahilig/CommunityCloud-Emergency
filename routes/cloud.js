@@ -20,7 +20,7 @@ router.get('/', restrict, function(req, res, next) {
         alerts = alert;
     });
     Event.find().lean().exec(function(err, event) {
-        console.log(alert);
+        console.log(alerts);
         var vm = {
             firstName : req.user.firstName,
             lastName : req.user.lastName,
