@@ -51,7 +51,9 @@
                     createdId: userId
                 }
             }).done(function(){
+                console.log("Before Reload");
                 location.reload();
+                console.log("Reload");
             });
 
         });
