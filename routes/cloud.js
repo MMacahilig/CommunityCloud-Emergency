@@ -131,10 +131,10 @@ router.get('/getEvent', function(req,res,next){
     });
 });
 
-router.get('/getAlerts',function(req,res,next){
-    Alert.find(function(err,alert){
-        res.send(alert);
-    })
+router.get("/getAlerts", function(req, res, next) {
+    Alert.find(function(err, users) {
+        res.send(users);
+    });
 });
 
 
