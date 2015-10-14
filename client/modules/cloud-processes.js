@@ -23,7 +23,7 @@
         console.log(userName);
 
         $.ajax({
-            url:"/cloud/event",
+            url:"http://emergencyservicecloud.herokuapp.com/cloud/event",
             type: "POST",
             data: {
                 alertType: AlertType,
