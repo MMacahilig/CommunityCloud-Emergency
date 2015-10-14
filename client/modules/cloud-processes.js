@@ -39,22 +39,23 @@
             }
         }).done(function(){
             console.log("SENT!");
-            $.ajax({
-                url:"/cloud/event",
-                type: "POST",
-                data: {
-                    alertType: AlertType,
-                    details: detail,
-                    location: userlocation,
-                    rating: rating,
-                    createdBy: userName,
-                    createdId: userId
-                }
-            }).done(function(){
-                console.log("Before Reload");
-                location.reload();
-                console.log("Reload");
-            });
 
+        });
+
+        $.ajax({
+            url:"/cloud/event",
+            type: "POST",
+            data: {
+                alertType: AlertType,
+                details: detail,
+                location: userlocation,
+                rating: rating,
+                createdBy: userName,
+                createdId: userId
+            }
+        }).done(function(){
+            console.log("Before Reload");
+            location.reload();
+            console.log("Reload");
         });
     });
