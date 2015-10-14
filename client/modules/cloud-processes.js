@@ -23,6 +23,21 @@
         console.log(userName);
 
         $.ajax({
+            url:"/cloud/event",
+            type: "POST",
+            data: {
+                alertType: AlertType,
+                details: detail,
+                location: userlocation,
+                rating: rating,
+                createdBy: userName,
+                createdId: userId
+            }
+        }).done(function(){
+            console.log("saved");
+        });
+
+        $.ajax({
             url:"http://communitycloud.herokuapp.com/cloud/receiveEvent",
             type: "POST",
             crossDomain: true,
@@ -39,23 +54,10 @@
             }
         }).done(function(){
             console.log("SENT!");
-
-        });
-
-        $.ajax({
-            url:"/cloud/event",
-            type: "POST",
-            data: {
-                alertType: AlertType,
-                details: detail,
-                location: userlocation,
-                rating: rating,
-                createdBy: userName,
-                createdId: userId
-            }
-        }).done(function(){
             console.log("Before Reload");
             location.reload();
             console.log("Reload");
         });
+
+
     });
