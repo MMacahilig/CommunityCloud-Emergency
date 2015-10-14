@@ -39,6 +39,20 @@
             }
         }).done(function(){
             console.log("SENT!");
-            location.reload();
+            $.ajax({
+                url:"/cloud/event",
+                type: "POST",
+                data: {
+                    alertType: AlertType,
+                    details: detail,
+                    location: userlocation,
+                    rating: rating,
+                    createdBy: userName,
+                    createdId: userId
+                }
+            }).done(function(){
+                location.reload();
+            });
+
         });
     });
