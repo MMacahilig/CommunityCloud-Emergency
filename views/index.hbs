@@ -1,0 +1,30 @@
+<div class="login-box">
+    <div class="login-logo">
+        <b>Community</b>Cloud
+    </div><!-- /.login-logo -->
+    <div class="login-box-body">
+        <p class="login-box-msg"><b>Emergency Services Portal</b></p>
+        {{#if error}}
+            <div class="alert alert-danger" role="alert">{{error}}</div>
+        {{/if}}
+        <form action="/users/login" method="post">
+            <div class="form-group has-feedback">
+                <input type="email" name="email" class="form-control" placeholder="Email">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="password" name="password" class="form-control" placeholder="Password">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                </div><!-- /.col -->
+            </div>
+        </form>
+
+
+        <a href="users/register" class="text-center">Register for an account</a>
+
+    </div><!-- /.login-box-body -->
+</div>
