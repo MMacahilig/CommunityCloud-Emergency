@@ -15,22 +15,22 @@ router.get('/', restrict, function(req, res, next) {
     var dateString = startDate.getDate() + "/" + startDate.getMonth() + "/" + startDate.getYear();
     //var dateString = startDate.getDate() + "/" + (startDate.getMonth()+1) + "/" + startDate.getYear();
     //console.log(dateString);
-    var alerts;
+
     Alert.find().lean().exec(function(err,alert){
-        alerts = alert;
+        Event.find().lean().exec(function(err, event) {
+
+            var vm = {
+                firstName : req.user.firstName,
+                lastName : req.user.lastName,
+                id: req.user._id,
+                event: event,
+                alert: alert,
+                created: dateString
+            };
+            res.render('cloud',vm);
+        });
     });
-    Event.find().lean().exec(function(err, event) {
-        console.log(alerts);
-        var vm = {
-            firstName : req.user.firstName,
-            lastName : req.user.lastName,
-            id: req.user._id,
-            event: event,
-            alert: alerts,
-            created: dateString
-        };
-        res.render('cloud',vm);
-    });
+
 
 });
 
