@@ -1,6 +1,18 @@
 
 
-    $("#delete").click(function() {
+    $("#deleteEvents").click(function() {
+        console.log("Alerts Deleted");
+        $.ajax({
+            url: "cloud/deleteEvents",
+            type: "DELETE"
+
+        }).done(function(){
+            console.log("DELETED");
+            location.reload();
+        });
+    });
+
+    $("#deleteAlerts").click(function() {
         console.log("Alerts Deleted");
         $.ajax({
             url: "cloud/deleteAlerts",
