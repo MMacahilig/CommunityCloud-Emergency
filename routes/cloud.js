@@ -145,6 +145,10 @@ router.get('/getEvent', function(req,res,next){
     });
 });
 
+router.post('/pialert', function(req,res,next){
+    res.send(JSON.stringify(req.body));
+});
+
 router.get("/getAlerts", function(req, res, next) {
     Alert.find(function(err, users) {
         res.send(users);
