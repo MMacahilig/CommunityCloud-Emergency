@@ -122,8 +122,9 @@ router.post('/receiveAlert', function(req, res, next) {
         next(null);
     });
     User.find(function(err,temp){
+
         var newAlertNotification = new AlertNotification ({
-            UserId: temp.getId(),
+            UserId: temp._id,
             createdBy: newAlert.createdBy,
             createdId: newAlert.createdId,
             dismissed: false,
