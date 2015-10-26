@@ -3,6 +3,7 @@ var router = express.Router();
 var Event = require('../models/event').Event;
 var Alert = require('../models/alert').Alert;
 var User = require('../models/user').User;
+var AlertNotification = require('../models/alert-notification').AlertNotification;
 
 var restrict = require('../auth/restrict');
 
@@ -120,9 +121,32 @@ router.post('/receiveAlert', function(req, res, next) {
         }
         next(null);
     });
+    User.find(function(err,user){
+        var newAlertNotification = new AlertNotification ({
+            UserId: user._id,
+            createdBy: newAlert.createdBy,
+            createdId: newAlert.createdId,
+            dismissed: false,
+            created: Date.now()
+        });
 
+        newAlertNotification.save(function (err) {
+            if(err){
+                console.log(err);
+                return next(err);
+            }
+            next(null);
+        });
+    });
     res.sendStatus(200);
 });
+
+router.get('/alertnotifications', function(req,res,next){
+    AlertNotification.find(function(err, alert) {
+        res.send(alert);
+    });
+});
+
 
 router.delete('/deleteAlerts', function(req, res, next) {
     console.log("trigger");

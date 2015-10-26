@@ -4,7 +4,8 @@ var Schema = mongoose.Schema;
 
 var eventNotificationSchema = new Schema({
     UserId: Schema.ObjectId,
-    createdBy: Schema.ObjectId,
+    createdBy: String,
+    createdId: Schema.ObjectId,
     dismissed: Boolean,
     created: {type: Date, Default: Date.now()}
 });
