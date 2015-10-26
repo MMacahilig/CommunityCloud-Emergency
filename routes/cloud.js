@@ -64,7 +64,7 @@ router.post('/mobileAlert', function(req, res, next) {
     console.log("trigger");
     console.log(req.body);
     var newAlert = new Alert ({
-        AlertType: req.body.AlertType,
+        alertType: req.body.AlertType,
         details: req.body.details,
         location: req.body.location,
         rating: req.body.rating,
@@ -123,7 +123,7 @@ router.post('/receiveAlert', function(req, res, next) {
     });
     User.find(function(err,user){
         var newAlertNotification = new AlertNotification ({
-            UserId: user._id,
+            UserId: user.getId(),
             createdBy: newAlert.createdBy,
             createdId: newAlert.createdId,
             dismissed: false,

@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 var userService = require('../services/user-service');
 
 var alertSchema = new Schema({
-    AlertType: String,
+    alertType: String,
     details: String,
     location: String,
     address: String,
