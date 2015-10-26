@@ -122,7 +122,6 @@ router.post('/receiveAlert', function(req, res, next) {
         next(null);
     });
     User.find(function(err,temp){
-        var userId = temp.getId();
         var newAlertNotification = new AlertNotification ({
             UserId: temp._id,
             createdBy: newAlert.createdBy,
@@ -138,8 +137,6 @@ router.post('/receiveAlert', function(req, res, next) {
             }
             next(null);
         });
-
-
     });
     res.sendStatus(200);
 });
