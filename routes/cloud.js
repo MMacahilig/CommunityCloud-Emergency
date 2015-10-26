@@ -122,23 +122,23 @@ router.post('/receiveAlert', function(req, res, next) {
         next(null);
     });
     User.find(function(err,temp){
-        temp.getId(function(err, items) {
-            var newAlertNotification = new AlertNotification ({
-                UserId: items,
-                createdBy: newAlert.createdBy,
-                createdId: newAlert.createdId,
-                dismissed: false,
-                created: Date.now()
-            });
-
-            newAlertNotification.save(function (err) {
-                if(err){
-                    console.log(err);
-                    return next(err);
-                }
-                next(null);
-            });
+        var userId = temp.getId();
+        var newAlertNotification = new AlertNotification ({
+            UserId: userId,
+            createdBy: newAlert.createdBy,
+            createdId: newAlert.createdId,
+            dismissed: false,
+            created: Date.now()
         });
+
+        newAlertNotification.save(function (err) {
+            if(err){
+                console.log(err);
+                return next(err);
+            }
+            next(null);
+        });
+
 
     });
     res.sendStatus(200);
