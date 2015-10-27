@@ -23,8 +23,14 @@ router.get('/', restrict, function(req, res, next) {
 
         //console.log("docs before: " + docs);
         if(docs){
-            var jsonAlerts = JSON.parse(docs);
-            console.log("json alerts: "+jsonAlerts)
+            for (var key in docs) {
+                if (docs.hasOwnProperty(key)) {
+                    //alert(key + " -> " + p[key]);
+                    console.log(key);
+                }
+            }
+            //var jsonAlerts = JSON.parse(docs);
+            //console.log("json alerts: "+jsonAlerts)
             /*docs.forEach(function(err,docs){
                 console.log("docs inside: " + docs);
                 console.log("alertId: " + docs.alertId);
