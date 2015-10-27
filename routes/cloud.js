@@ -17,8 +17,10 @@ router.get('/', restrict, function(req, res, next) {
     //var dateString = startDate.getDate() + "/" + (startDate.getMonth()+1) + "/" + startDate.getYear();
     //console.log(dateString);
 
-    AlertNotification.find({UserId: req.user._id},function(err,alerts){
-        Alert.find({_id:alerts._id},function(err,alert){
+    AlertNotification.find({UserId: req.user._id},function(err,docs){
+        res.send(docs);
+        /*
+        Alert.find({_id:docs._id},function(err,alert){
             Event.find().lean().exec(function(err, event) {
                 var vm = {
                     firstName : req.user.firstName,
@@ -30,7 +32,7 @@ router.get('/', restrict, function(req, res, next) {
                 };
                 res.render('cloud',vm);
             });
-        });
+        });*/
 
     });
 
