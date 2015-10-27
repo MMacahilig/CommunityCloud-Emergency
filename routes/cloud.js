@@ -121,23 +121,26 @@ router.post('/receiveAlert', function(req, res, next) {
         }
         next(null);
     });
-    User.find().lean().exec(function(err,user){
+    User.find({}),function(err,user){
         if(user){
-            var newAlertNotification = new AlertNotification ({
-                UserId: "561ded2fbc5c90110042d2ea",
-                createdBy: newAlert.createdBy,
-                createdId: newAlert.createdId,
-                dismissed: false,
-                created: Date.now()
+            users.forEach(function(user){
+                var newAlertNotification = new AlertNotification ({
+                    UserId: user._id,
+                    createdBy: newAlert.createdBy,
+                    createdId: newAlert.createdId,
+                    dismissed: false,
+                    created: Date.now()
+                });
+
+                newAlertNotification.save(function (err) {
+                    if(err){
+                        console.log(err);
+                        return next(err);
+                    }
+                    next(null);
+                });
             });
 
-            newAlertNotification.save(function (err) {
-                if(err){
-                    console.log(err);
-                    return next(err);
-                }
-                next(null);
-            });
         }
 
     });
