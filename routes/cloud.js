@@ -28,7 +28,7 @@ router.get('/', restrict, function(req, res, next) {
                 alertString.push(docs[key].alertId);
             }
         }
-        console.log("alerts: " + alertString);
+        //console.log("alerts: " + alertString);
         for (var i = 0; i < alertString.length; i++) {
             if(i == alertString.length -1){
                 queryString += "{_id:" + alertString[i]+"}";
