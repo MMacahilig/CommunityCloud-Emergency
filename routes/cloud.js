@@ -18,8 +18,7 @@ router.get('/', restrict, function(req, res, next) {
     //console.log(dateString);
 
     AlertNotification.find({UserId: req.user._id},function(err,docs){
-        res.send(docs);
-        /*
+        
         Alert.find({_id:docs._id},function(err,alert){
             Event.find().lean().exec(function(err, event) {
                 var vm = {
@@ -32,7 +31,7 @@ router.get('/', restrict, function(req, res, next) {
                 };
                 res.render('cloud',vm);
             });
-        });*/
+        });
 
     });
 
