@@ -25,7 +25,9 @@ router.get('/', restrict, function(req, res, next) {
         if(docs){
             for (var key in docs) {
                 console.log("key:" + docs);
-                alertString += "id:" + docs.alertId + ",";
+                var parser = JSON.parse(docs);
+
+                alertString += "id:" + parser.alertId + ",";
                 //Alert.find({ _id: docs.alertId }).lean().exec(function(err,alert){
                 //    console.log("searching");
                 //    alertString += JSON.stringify(alert);
