@@ -18,13 +18,13 @@ router.get('/', restrict, function(req, res, next) {
     //console.log(dateString);
 
     AlertNotification.find({UserId: req.user._id},function(err,docs){
-        var array = new Array();
+        var alertArray = new Array();
         docs.forEach(function(err,alerts){
             Alert.find({_id:alerts.alertId},function(err,alert){
-                array.push(alert);
+                alertArray.push(alert);
             });
         });
-        array = JSON.stringify(array);
+        alertArray = JSON.stringify(alertArray);
         console.log("alerts: " + docs.alertId);
         Event.find().lean().exec(function(err, event) {
             var vm = {
