@@ -38,9 +38,13 @@ router.get('/', restrict, function(req, res, next) {
         }
         queryString += "]";
 
-        Alert.find({ $in: alertString }).lean().exec(function(err,alert){
-            if (alert){
+        Alert.find({ _id:{$in: alertString }}).lean().exec(function(err,alert){
+            if(alert){
                 console.log("alerts: " + alert);
+            }
+
+            if(!alert){
+                console.log("NOT FOUND");
             }
 
         });
