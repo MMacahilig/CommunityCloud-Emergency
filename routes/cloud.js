@@ -18,16 +18,16 @@ router.get('/', restrict, function(req, res, next) {
     //console.log(dateString);
 
     AlertNotification.find({UserId: req.user._id}).lean().exec(function(err,docs){
-        var alertString = "{";
+        var alertString = [];
         var i = 0;
 
         //console.log("docs before: " + docs);
         if(docs){
             for (var key in docs) {
-                console.log("key:" + docs[0].alertId);
+                console.log("key:" + docs[key].alertId);
                 //var parser = JSON.parse(docs);
 
-                alertString += "id:" + docs.alertId + ",";
+                alertString.push(docs[key].alertId);
                 //Alert.find({ _id: docs.alertId }).lean().exec(function(err,alert){
                 //    console.log("searching");
                 //    alertString += JSON.stringify(alert);
@@ -44,8 +44,8 @@ router.get('/', restrict, function(req, res, next) {
             });*/
         }
         //console.log("docs after: " + docs);
-        alertString += "}";
-        //console.log("alerts: " + alertString);
+
+        console.log("alerts: " + alertString);
         //alertArray = JSON.stringify(alertString);
 
         Event.find().lean().exec(function(err, event) {
