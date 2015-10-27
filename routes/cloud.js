@@ -24,7 +24,7 @@ router.get('/', restrict, function(req, res, next) {
                 array.push(alert);
             });
         });
-
+        array = JSON.stringify(array);
         console.log("alerts: " + docs.alertId);
         Event.find().lean().exec(function(err, event) {
             var vm = {
