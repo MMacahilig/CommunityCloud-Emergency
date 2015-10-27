@@ -25,10 +25,11 @@ router.get('/', restrict, function(req, res, next) {
         if(docs){
             for (var key in docs) {
                 console.log("key:" + docs);
-                Alert.find({ _id: docs.alertId }).lean().exec(function(err,alert){
-                    console.log("searching");
-                    alertString += JSON.stringify(alert);
-                });
+                alertString += "id:" + docs._id + ",";
+                //Alert.find({ _id: docs.alertId }).lean().exec(function(err,alert){
+                //    console.log("searching");
+                //    alertString += JSON.stringify(alert);
+                //});
             }
             //var jsonAlerts = JSON.parse(docs);
             //console.log("json alerts: "+jsonAlerts)
