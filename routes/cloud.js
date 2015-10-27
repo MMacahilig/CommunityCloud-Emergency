@@ -25,10 +25,9 @@ router.get('/', restrict, function(req, res, next) {
         if(docs){
             for (var key in docs) {
                 console.log("key:" + docs);
-                if (docs.hasOwnProperty(key)) {
-                    //alert(key + " -> " + p[key]);
-
-                }
+                Alert.find({ _id: docs.alertId }).lean().exec(function(err,alert){
+                    alertString += alert;
+                });
             }
             //var jsonAlerts = JSON.parse(docs);
             //console.log("json alerts: "+jsonAlerts)
