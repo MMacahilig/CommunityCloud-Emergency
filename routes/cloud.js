@@ -39,7 +39,10 @@ router.get('/', restrict, function(req, res, next) {
         queryString += "]";
 
         Alert.find({ $or: queryString }).lean().exec(function(err,alert){
-            console.log("alerts: " + alert);
+            if (alert){
+                console.log("alerts: " + alert);
+            }
+
         });
         //console.log("query String: " + queryString);
 
