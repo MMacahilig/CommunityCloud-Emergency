@@ -19,12 +19,12 @@ router.get('/', restrict, function(req, res, next) {
 
     AlertNotification.find({UserId: req.user._id},function(err,alerts){
         var array = new Array();
-        if(alerts){
-            alerts.each(function(err, alerts){
+
+           
                 Alert.find({_id:alerts._id},function(err,alert){
                     array.push(alert);
                 });
-            });
+
 
             Event.find().lean().exec(function(err, event) {
 
@@ -38,7 +38,7 @@ router.get('/', restrict, function(req, res, next) {
                 };
                 res.render('cloud',vm);
             });
-        }
+
     });
 
 
