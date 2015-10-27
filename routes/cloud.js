@@ -21,7 +21,7 @@ router.get('/', restrict, function(req, res, next) {
         var alertString = "{";
         var i = 0;
 
-        console.log("docs before: " + docs);
+        //console.log("docs before: " + docs);
         if(docs){
             var jsonAlerts = JSON.parse(docs);
             console.log("json alerts: "+jsonAlerts)
@@ -33,9 +33,9 @@ router.get('/', restrict, function(req, res, next) {
                 });
             });
         }
-        console.log("docs after: " + docs);
+        //console.log("docs after: " + docs);
         alertString += "}";
-        console.log("alerts: " + alertString);
+        //console.log("alerts: " + alertString);
         alertArray = JSON.stringify(alertString);
 
         Event.find().lean().exec(function(err, event) {
