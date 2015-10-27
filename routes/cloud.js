@@ -24,7 +24,7 @@ router.get('/', restrict, function(req, res, next) {
         //console.log("docs before: " + docs);
         if(docs){
             for (var key in docs) {
-                console.log("key:" + docs[0]);
+                console.log("key:" + docs[0].alertId);
                 //var parser = JSON.parse(docs);
 
                 alertString += "id:" + docs.alertId + ",";
