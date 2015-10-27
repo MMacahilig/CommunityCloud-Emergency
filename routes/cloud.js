@@ -121,7 +121,7 @@ router.post('/receiveAlert', function(req, res, next) {
         }
         next(null);
     });
-    User.find({}),function(err,user){
+    User.find({},function(err,user){
         if(user){
             users.forEach(function(user){
                 var newAlertNotification = new AlertNotification ({
