@@ -18,8 +18,7 @@ router.get('/', restrict, function(req, res, next) {
     //console.log(dateString);
 
     AlertNotification.find({UserId: req.user._id},function(err,docs){
-        
-        Alert.find({_id:docs._id},function(err,alert){
+        Alert.find({_id:docs.alertId},function(err,alert){
             Event.find().lean().exec(function(err, event) {
                 var vm = {
                     firstName : req.user.firstName,
