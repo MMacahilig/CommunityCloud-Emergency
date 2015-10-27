@@ -24,7 +24,7 @@ router.get('/', restrict, function(req, res, next) {
         //console.log("docs before: " + docs);
         if(docs){
             for (var key in docs) {
-                console.log("key:" + key);
+                console.log("key:" + docs);
                 if (docs.hasOwnProperty(key)) {
                     //alert(key + " -> " + p[key]);
 
