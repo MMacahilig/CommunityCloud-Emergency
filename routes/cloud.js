@@ -135,7 +135,7 @@ router.post('/receiveAlert', function(req, res, next) {
                 newAlertNotification.save(function (err) {
                     if(err){
                         console.log(err);
-                        return next(err);
+                        //return next(err);
                     }
                     next(null);
                 });
