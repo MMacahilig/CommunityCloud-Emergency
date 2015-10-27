@@ -23,7 +23,7 @@ router.get('/', restrict, function(req, res, next) {
         console.log("docs: " + docs);
         docs.forEach(function(err,docs){
             Alert.find({ _id: docs.alertId }).lean().exec(function(err,alert){
-                alertArray[i] = alert;
+                alertArray[i] = new Alert(alert);
                 i++;
             });
         });
