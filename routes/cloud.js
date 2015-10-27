@@ -19,6 +19,7 @@ router.get('/', restrict, function(req, res, next) {
 
     AlertNotification.find({UserId: req.user._id}).lean().exec(function(err,docs){
         var alertString = [];
+        var queryString = "{";
         var i = 0;
 
         //console.log("docs before: " + docs);
@@ -46,6 +47,17 @@ router.get('/', restrict, function(req, res, next) {
         //console.log("docs after: " + docs);
 
         console.log("alerts: " + alertString);
+
+        for (var i = 0; i < alertString.length; i++) {
+            if(i == alertString.length -1){
+                queryString += "{_id:" + alertString[i]+"}";
+            }else{
+                queryString += "{_id:" + alertString[i]+"},";
+            }
+
+        }
+        queryString += "}";
+        console.log("query String: " + queryString);
         //alertArray = JSON.stringify(alertString);
 
         Event.find().lean().exec(function(err, event) {
