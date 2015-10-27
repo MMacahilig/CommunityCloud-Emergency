@@ -27,8 +27,9 @@ router.get('/', restrict, function(req, res, next) {
                 i++;
             });
         });
+        console.log("alerts: " + alertArray);
         alertArray = JSON.stringify(alertArray);
-        console.log("alerts: " + docs.alertId);
+
         Event.find().lean().exec(function(err, event) {
             var vm = {
                 firstName : req.user.firstName,
