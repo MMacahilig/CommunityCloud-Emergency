@@ -26,7 +26,7 @@ router.get('/', restrict, function(req, res, next) {
             for (var key in docs) {
                 if (docs.hasOwnProperty(key)) {
                     //alert(key + " -> " + p[key]);
-                    console.log(key);
+                    console.log("key:" + key);
                 }
             }
             //var jsonAlerts = JSON.parse(docs);
