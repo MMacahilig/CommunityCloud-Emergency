@@ -21,17 +21,17 @@ router.get('/', restrict, function(req, res, next) {
         var alertString = "{";
         var i = 0;
 
-
+        console.log("docs before: " + docs);
         if(docs){
             docs.forEach(function(err,docs){
-                console.log("docs: " + docs);
+                console.log("docs inside: " + docs);
                 console.log("alertId: " + docs.alertId);
                 Alert.find({ _id: docs.alertId }).lean().exec(function(err,alert){
                     alertString +=alert;
                 });
             });
         }
-
+        console.log("docs after: " + docs);
         alertString += "}";
         console.log("alerts: " + alertString);
         alertArray = JSON.stringify(alertString);
