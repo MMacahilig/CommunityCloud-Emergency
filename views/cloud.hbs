@@ -184,7 +184,7 @@
 
                                             <tr class="alerts">
                                                 <td class="font-montserrat all-caps col-lg-3 client">
-                                                    <h3>{{AlertType}}</h3>
+                                                    <h3>{{alertType}}</h3>
                                                     <span>{{created}}</span>
                                                 </td>
                                                 <td class=" b-r b-dashed b-grey col-lg-3">
@@ -196,7 +196,21 @@
                                                 </td>
 
                                                 <td class="col-lg-4">
-                                                    <span class="location">{{location}}</span>
+                                                    {{#if address}}
+                                                        <span class="address location">{{address}}</span>
+                                                        <span class="city location">{{city}}</span>
+                                                        <span class="state location">{{state}}</span>
+                                                    {{else}}
+                                                        {{#if city}}
+                                                            <span class="city location">{{city}}</span>
+                                                            <span class="state location">{{state}}</span>
+                                                        {{else}}
+                                                            {{#if state}}
+                                                                <span class="state location">{{state}}</span>
+                                                            {{/if}}
+                                                        {{/if}}
+                                                    {{/if}}
+
                                                 </td>
 
                                             </tr>
