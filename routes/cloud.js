@@ -19,7 +19,7 @@ router.get('/', restrict, function(req, res, next) {
 
     AlertNotification.find({UserId: req.user._id},function(err,docs){
         Alert.find({_id:docs.alertId},function(err,alert){
-            console.log("alerts: " + alert);
+            console.log("alerts: " + docs.alertId);
             Event.find().lean().exec(function(err, event) {
                 var vm = {
                     firstName : req.user.firstName,
