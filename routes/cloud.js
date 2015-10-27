@@ -16,8 +16,8 @@ router.get('/', restrict, function(req, res, next) {
     var dateString = startDate.getDate() + "/" + startDate.getMonth() + "/" + startDate.getYear();
     //var dateString = startDate.getDate() + "/" + (startDate.getMonth()+1) + "/" + startDate.getYear();
     //console.log(dateString);
-    
-    AlertNotification.find({UserId: req.user._id}).lean().exec(function(err,alerts){
+
+    AlertNotification.find({UserId: req.user._id},function(err,alerts){
         var array = new Array();
         if(alerts){
             alerts.each(function(err, alerts){
