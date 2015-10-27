@@ -18,7 +18,7 @@ router.get('/', restrict, function(req, res, next) {
     //console.log(dateString);
 
     AlertNotification.find({UserId: req.user._id},function(err,docs){
-        var alertArray = new Array();
+        var alertArray = [];
         docs.forEach(function(err,alerts){
             Alert.find({_id:alerts.alertId},function(err,alert){
                 alertArray.push(alert);
