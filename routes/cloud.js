@@ -123,7 +123,7 @@ router.post('/receiveAlert', function(req, res, next) {
     });
     User.find({},function(err,user){
         if(user){
-            users.forEach(function(user){
+            user.forEach(function(user){
                 var newAlertNotification = new AlertNotification ({
                     UserId: user._id,
                     createdBy: newAlert.createdBy,
