@@ -20,10 +20,11 @@ router.get('/', restrict, function(req, res, next) {
     AlertNotification.find({UserId: req.user._id},function(err,docs){
         var alertString = "{";
         var i = 0;
-        console.log("docs: " + docs);
+
 
         if(docs){
             docs.forEach(function(err,docs){
+                console.log("docs: " + docs);
                 console.log("alertId: " + docs.alertId);
                 Alert.find({ _id: docs.alertId }).lean().exec(function(err,alert){
                     alertString +=alert;
