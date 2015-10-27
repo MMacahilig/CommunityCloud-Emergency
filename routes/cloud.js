@@ -34,7 +34,7 @@ router.get('/', restrict, function(req, res, next) {
                 lastName : req.user.lastName,
                 id: req.user._id,
                 event: event,
-                alert: array,
+                alert: alertArray,
                 created: dateString
             };
             res.render('cloud',vm);
