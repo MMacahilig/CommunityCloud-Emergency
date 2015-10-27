@@ -6,6 +6,7 @@ var alertNotificationSchema = new Schema({
     UserId: Schema.ObjectId,
     createdBy: String,
     createdId: Schema.ObjectId,
+    alertId: Schema.ObjectId,
     dismissed: Boolean,
     created: {type: Date, Default: Date.now()}
 });

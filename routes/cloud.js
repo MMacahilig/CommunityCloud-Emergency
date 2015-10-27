@@ -18,20 +18,28 @@ router.get('/', restrict, function(req, res, next) {
     //console.log(dateString);
 
     Alert.find().lean().exec(function(err,alert){
-        Event.find().lean().exec(function(err, event) {
 
-            var vm = {
-                firstName : req.user.firstName,
-                lastName : req.user.lastName,
-                id: req.user._id,
-                event: event,
-                alert: alert,
-                created: dateString
-            };
-            res.render('cloud',vm);
-        });
     });
 
+    AlertNotification.find({UserId: req.user._id}).lean().exec(function(err,alerts){
+        if(alerts){
+            alerts.each(function(err, alerts){
+                Alert.find({_id:alerts._id})
+            });
+        }
+    });
+    Event.find().lean().exec(function(err, event) {
+
+        var vm = {
+            firstName : req.user.firstName,
+            lastName : req.user.lastName,
+            id: req.user._id,
+            event: event,
+            alert: alert,
+            created: dateString
+        };
+        res.render('cloud',vm);
+    });
 
 });
 
@@ -128,6 +136,7 @@ router.post('/receiveAlert', function(req, res, next) {
                     UserId: user._id,
                     createdBy: newAlert.createdBy,
                     createdId: newAlert.createdId,
+                    alertId: newAlert._id,
                     dismissed: false,
                     created: Date.now()
                 });
