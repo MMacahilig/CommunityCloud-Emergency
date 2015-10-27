@@ -40,27 +40,22 @@ router.get('/', restrict, function(req, res, next) {
 
         Alert.find({ _id:{$in: alertString }}).lean().exec(function(err,alert){
             if(alert){
-                console.log("alerts: " + alert);
+                Event.find().lean().exec(function(err, event) {
+                    var vm = {
+                        firstName : req.user.firstName,
+                        lastName : req.user.lastName,
+                        id: req.user._id,
+                        event: event,
+                        alert: alertString,
+                        created: dateString
+                    };
+                    res.render('cloud',vm);
+                });
             }
-
-            if(!alert){
-                console.log("NOT FOUND");
-            }
-
         });
         //console.log("query String: " + queryString);
 
-        Event.find().lean().exec(function(err, event) {
-            var vm = {
-                firstName : req.user.firstName,
-                lastName : req.user.lastName,
-                id: req.user._id,
-                event: event,
-                alert: alertString,
-                created: dateString
-            };
-            res.render('cloud',vm);
-        });
+
     });
 });
 
