@@ -25,13 +25,13 @@ router.get('/', restrict, function(req, res, next) {
         if(docs){
             var jsonAlerts = JSON.parse(docs);
             console.log("json alerts: "+jsonAlerts)
-            docs.forEach(function(err,docs){
+            /*docs.forEach(function(err,docs){
                 console.log("docs inside: " + docs);
                 console.log("alertId: " + docs.alertId);
                 Alert.find({ _id: docs.alertId }).lean().exec(function(err,alert){
                     alertString +=alert;
                 });
-            });
+            });*/
         }
         //console.log("docs after: " + docs);
         alertString += "}";
