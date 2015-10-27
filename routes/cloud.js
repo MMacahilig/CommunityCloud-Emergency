@@ -21,11 +21,16 @@ router.get('/', restrict, function(req, res, next) {
         var alertString = "{";
         var i = 0;
         console.log("docs: " + docs);
-        docs.forEach(function(err,docs){
-            Alert.find({ _id: docs.alertId }).lean().exec(function(err,alert){
-                alertString +=alert;
+
+        if(docs){
+            console.log("alderId: " + docs.alertId);
+            docs.forEach(function(err,docs){
+                Alert.find({ _id: docs.alertId }).lean().exec(function(err,alert){
+                    alertString +=alert;
+                });
             });
-        });
+        }
+
         alertString += "}";
         console.log("alerts: " + alertString);
         alertArray = JSON.stringify(alertString);
