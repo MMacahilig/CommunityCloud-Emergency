@@ -42,7 +42,7 @@ router.get('/', restrict, function(req, res, next) {
         //console.log("docs after: " + docs);
         alertString += "}";
         //console.log("alerts: " + alertString);
-        alertArray = JSON.stringify(alertString);
+        //alertArray = JSON.stringify(alertString);
 
         Event.find().lean().exec(function(err, event) {
             var vm = {
