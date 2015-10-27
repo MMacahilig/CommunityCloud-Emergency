@@ -19,46 +19,29 @@ router.get('/', restrict, function(req, res, next) {
 
     AlertNotification.find({UserId: req.user._id}).lean().exec(function(err,docs){
         var alertString = [];
-        var queryString = "{";
+        var queryString = "[";
         var i = 0;
 
-        //console.log("docs before: " + docs);
         if(docs){
             for (var key in docs) {
-                console.log("key:" + docs[key].alertId);
-                //var parser = JSON.parse(docs);
-
+                //console.log("key:" + docs[key].alertId);
                 alertString.push(docs[key].alertId);
-                //Alert.find({ _id: docs.alertId }).lean().exec(function(err,alert){
-                //    console.log("searching");
-                //    alertString += JSON.stringify(alert);
-                //});
             }
-            //var jsonAlerts = JSON.parse(docs);
-            //console.log("json alerts: "+jsonAlerts)
-            /*docs.forEach(function(err,docs){
-                console.log("docs inside: " + docs);
-                console.log("alertId: " + docs.alertId);
-                Alert.find({ _id: docs.alertId }).lean().exec(function(err,alert){
-                    alertString +=alert;
-                });
-            });*/
         }
-        //console.log("docs after: " + docs);
-
         console.log("alerts: " + alertString);
-
         for (var i = 0; i < alertString.length; i++) {
             if(i == alertString.length -1){
                 queryString += "{_id:" + alertString[i]+"}";
             }else{
                 queryString += "{_id:" + alertString[i]+"},";
             }
-
         }
-        queryString += "}";
-        console.log("query String: " + queryString);
-        //alertArray = JSON.stringify(alertString);
+        queryString += "]";
+
+        Alert.find({ $or: queryString }).lean().exec(function(err,alert){
+            console.log("alerts: " + alert);
+        });
+        //console.log("query String: " + queryString);
 
         Event.find().lean().exec(function(err, event) {
             var vm = {
