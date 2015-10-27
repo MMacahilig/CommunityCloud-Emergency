@@ -23,8 +23,8 @@ router.get('/', restrict, function(req, res, next) {
         console.log("docs: " + docs);
 
         if(docs){
-            console.log("alderId: " + docs.alertId);
             docs.forEach(function(err,docs){
+                console.log("alertId: " + docs.alertId);
                 Alert.find({ _id: docs.alertId }).lean().exec(function(err,alert){
                     alertString +=alert;
                 });
