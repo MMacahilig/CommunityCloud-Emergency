@@ -21,8 +21,8 @@ router.get('/', restrict, function(req, res, next) {
         var alertArray = [];
         var i = 0;
         console.log("docs: " + docs);
-        docs.forEach(function(err,alerts){
-            Alert.find({_id:alerts.alertId},function(err,alert){
+        docs.forEach(function(err,docs){
+            Alert.find({ _id: docs.alertId }).lean().exec(function(err,alert){
                 alertArray[i] = alert;
                 i++;
             });
