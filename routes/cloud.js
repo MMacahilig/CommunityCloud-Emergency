@@ -18,21 +18,25 @@ router.get('/', restrict, function(req, res, next) {
     //console.log(dateString);
 
     AlertNotification.find({UserId: req.user._id},function(err,docs){
-        Alert.find({_id:docs.alertId},function(err,alert){
-            console.log("alerts: " + docs.alertId);
-            Event.find().lean().exec(function(err, event) {
-                var vm = {
-                    firstName : req.user.firstName,
-                    lastName : req.user.lastName,
-                    id: req.user._id,
-                    event: event,
-                    alert: alert,
-                    created: dateString
-                };
-                res.render('cloud',vm);
+        var array = new Array();
+        docs.forEach(function(err,alerts){
+            Alert.find({_id:alerts.alertId},function(err,alert){
+                array.push(alert);
             });
         });
 
+        console.log("alerts: " + docs.alertId);
+        Event.find().lean().exec(function(err, event) {
+            var vm = {
+                firstName : req.user.firstName,
+                lastName : req.user.lastName,
+                id: req.user._id,
+                event: event,
+                alert: array,
+                created: dateString
+            };
+            res.render('cloud',vm);
+        });
     });
 
 
