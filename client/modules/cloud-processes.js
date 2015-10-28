@@ -72,10 +72,9 @@
                 createdId: userId
             }
         }).done(function(){
-            console.log("SENT!");
-            console.log("Before Reload");
+            console.log("SENT! To Community");
             location.reload();
-            console.log("Reload");
+
         });
 
 
