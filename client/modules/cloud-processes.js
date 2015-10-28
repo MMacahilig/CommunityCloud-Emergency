@@ -29,6 +29,9 @@
         var AlertType = $("#alertType").val();
         var detail = $("#alertDetails").val();
         var userlocation = $("#location").val();
+        var address =  $("#address").val();
+        var city  =  $("#city").val();
+        var state =  $("#state").val();
         var rating = $("#alertRating").val();
         var userId = $("#userID").html();
         var userName = $("#username").html();
@@ -40,7 +43,9 @@
             data: {
                 alertType: AlertType,
                 details: detail,
-                location: userlocation,
+                address: address,
+                city: city,
+                state: state,
                 rating: rating,
                 createdBy: userName,
                 createdId: userId
@@ -59,7 +64,9 @@
             data: {
                 alertType: AlertType,
                 details: detail,
-                location: userlocation,
+                address: address,
+                city: city,
+                state: state,
                 rating: rating,
                 createdBy: userName,
                 createdId: userId
