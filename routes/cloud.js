@@ -60,8 +60,6 @@ router.get('/', restrict, function(req, res, next) {
 });
 
 router.post('/event', function(req, res, next) {
-    console.log("trigger");
-    console.log(req.body);
 
     var newEvent = new Event ({
         alertType: req.body.alertType,
@@ -76,7 +74,6 @@ router.post('/event', function(req, res, next) {
     newEvent.save(function (err) {
         if(err){
             console.log(err);
-            return next(err);
         }
         next(null);
     });
@@ -85,8 +82,6 @@ router.post('/event', function(req, res, next) {
 });
 
 router.post('/mobileAlert', function(req, res, next) {
-    console.log("trigger");
-    console.log(req.body);
     var newAlert = new Alert ({
         alertType: req.body.AlertType,
         details: req.body.details,
