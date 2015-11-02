@@ -45,11 +45,9 @@
       <file leaf-file-name="cloud.hbs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/cloud.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45918366">
-              <caret line="159" column="25" selection-start-line="159" selection-start-column="25" selection-end-line="159" selection-end-column="25" />
-              <folding>
-                <marker date="1446441259000" expanded="true" signature="7708:8860" placeholder="..." />
-              </folding>
+            <state vertical-scroll-proportion="0.8090379">
+              <caret line="164" column="21" selection-start-line="164" selection-start-column="21" selection-end-line="164" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -567,12 +565,12 @@
       <workItem from="1445938579055" duration="6922000" />
       <workItem from="1445990301699" duration="1919000" />
       <workItem from="1446179842915" duration="488000" />
-      <workItem from="1446435568424" duration="1936000" />
+      <workItem from="1446435568424" duration="2030000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40124000" />
+    <option name="totallyTimeSpent" value="40218000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1440" height="830" extended-state="6" />
@@ -1017,11 +1015,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/cloud.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45918366">
-          <caret line="159" column="25" selection-start-line="159" selection-start-column="25" selection-end-line="159" selection-end-column="25" />
-          <folding>
-            <marker date="1446441259000" expanded="true" signature="7708:8860" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="0.8090379">
+          <caret line="164" column="21" selection-start-line="164" selection-start-column="21" selection-end-line="164" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
