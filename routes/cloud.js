@@ -99,6 +99,31 @@ router.post('/mobileAlert', function(req, res, next) {
         next(null);
     });
 
+    User.find({},function(err,user){
+        if(user){
+            user.forEach(function(user){
+                var newAlertNotification = new AlertNotification ({
+                    UserId: user._id,
+                    createdBy: newAlert.createdBy,
+                    createdId: newAlert.createdId,
+                    alertId: newAlert._id,
+                    dismissed: false,
+                    created: Date.now()
+                });
+
+                newAlertNotification.save(function (err) {
+                    if(err){
+                        console.log(err);
+                        //return next(err);
+                    }
+                    next(null);
+                });
+            });
+
+        }
+
+    });
+
     var vm = {
         "success": "true"
     };
@@ -215,6 +240,31 @@ router.post('/pialert', function(req,res,next){
     });
 
     newAlert.save();
+
+    User.find({},function(err,user){
+        if(user){
+            user.forEach(function(user){
+                var newAlertNotification = new AlertNotification ({
+                    UserId: user._id,
+                    createdBy: newAlert.createdBy,
+                    createdId: newAlert.createdId,
+                    alertId: newAlert._id,
+                    dismissed: false,
+                    created: Date.now()
+                });
+
+                newAlertNotification.save(function (err) {
+                    if(err){
+                        console.log(err);
+                        //return next(err);
+                    }
+                    next(null);
+                });
+            });
+
+        }
+
+    });
     res.send(JSON.stringify(req.body));
 });
 
