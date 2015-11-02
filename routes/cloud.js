@@ -65,6 +65,9 @@ router.post('/event', function(req, res, next) {
         alertType: req.body.alertType,
         details: req.body.details,
         location: req.body.location,
+        address: req.body.address,
+        city: req.body.city,
+        state: req.body.state,
         rating: req.body.rating,
         createdBy: req.user.firstName + " " + req.user.lastName,
         createdId: req.user._id,
@@ -86,6 +89,9 @@ router.post('/mobileAlert', function(req, res, next) {
         alertType: req.body.AlertType,
         details: req.body.details,
         location: req.body.location,
+        address: req.body.address,
+        city: req.body.city,
+        state: req.body.state,
         rating: req.body.rating,
         createdBy: req.body._id,
         created: Date.now()
@@ -153,6 +159,7 @@ router.post('/receiveAlert', function(req, res, next) {
         address: req.body.address,
         city: req.body.city,
         state: req.body.state,
+        rating: req.body.rating,
         createdBy: req.body.createdBy,
         createdId: req.body.createdId,
         created: Date.now()
@@ -226,6 +233,7 @@ router.post('/pialert', function(req,res,next){
         address: req.body.address,
         city: req.body.city,
         state: req.body.state,
+        rating: req.body.rating,
         createdBy: req.body.createdBy,
         createdId: req.body.createdId,
         created: Date.now()
