@@ -100,7 +100,7 @@ router.post('/mobileAlert', function(req, res, next) {
     newAlert.save(function (err) {
         if(err){
             console.log(err);
-            return next(err);
+            //return next(err);
         }
         next(null);
     });
