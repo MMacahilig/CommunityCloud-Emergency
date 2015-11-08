@@ -130,10 +130,6 @@ router.post('/mobileAlert', function(req, res, next) {
 
     });
 
-    var vm = {
-        "success": "true"
-    };
-
     res.send(200);
 
 });
