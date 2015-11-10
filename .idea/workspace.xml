@@ -55,8 +55,8 @@
       <file leaf-file-name="cloud.hbs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/cloud.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.0945945">
-              <caret line="203" column="52" selection-start-line="203" selection-start-column="52" selection-end-line="203" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.5743243">
+              <caret line="282" column="0" selection-start-line="282" selection-start-column="0" selection-end-line="282" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -582,12 +582,12 @@
       <workItem from="1446902314145" duration="302000" />
       <workItem from="1446983943147" duration="396000" />
       <workItem from="1447046411777" duration="390000" />
-      <workItem from="1447113280809" duration="507000" />
+      <workItem from="1447113280809" duration="761000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43220000" />
+    <option name="totallyTimeSpent" value="43474000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1440" height="830" extended-state="6" />
@@ -1028,8 +1028,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/cloud.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0945945">
-          <caret line="203" column="52" selection-start-line="203" selection-start-column="52" selection-end-line="203" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.5743243">
+          <caret line="282" column="0" selection-start-line="282" selection-start-column="0" selection-end-line="282" selection-end-column="0" />
           <folding />
         </state>
       </provider>
