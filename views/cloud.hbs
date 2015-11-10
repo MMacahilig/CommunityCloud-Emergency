@@ -193,12 +193,15 @@
                                                     <h5>Details</h5>
 
                                                 </td>
-                                                <td class="col-lg-2 alarm-grade ">
+                                                <td class="col-lg-1 alarm-grade ">
                                                     <h5>Alert Rating</h5>
                                                 </td>
 
                                                 <td class="col-lg-4">
                                                     <h5>Location</h5>
+                                                </td>
+                                                <td class="col-lg-1">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                                 </td>
 
                                             </tr>
@@ -209,6 +212,7 @@
                                                 <td class="font-montserrat all-caps col-lg-3 client">
                                                     <strong>{{alertType}}</strong>
                                                     <span>{{created}}</span>
+                                                    <span class="hidden" id="eventId">{{_id}}</span>
                                                 </td>
                                                 <td class=" b-r b-dashed b-grey col-lg-3">
                                                     <span class="">{{details}}</span><br>

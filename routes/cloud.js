@@ -17,7 +17,7 @@ router.get('/', restrict, function(req, res, next) {
     //var dateString = startDate.getDate() + "/" + (startDate.getMonth()+1) + "/" + startDate.getYear();
     //console.log(dateString);
 
-    AlertNotification.find({UserId: req.user._id}).lean().exec(function(err,docs){
+    AlertNotification.find({UserId: req.user._id,dismissed:false}).lean().exec(function(err,docs){
         var alertString = [];
         var queryString = "[";
         var i = 0;
@@ -40,7 +40,7 @@ router.get('/', restrict, function(req, res, next) {
 
         Alert.find({ _id:{$in: alertString }}).sort({created: 'desc'}).lean().exec(function(err,alert){
             if(alert){
-                Event.find().sort({created: 'desc'}).lean().exec(function(err, event) {
+                Event.find({createdId:req.user._id}).sort({created: 'desc'}).lean().exec(function(err, event) {
                     var vm = {
                         firstName : req.user.firstName,
                         lastName : req.user.lastName,
@@ -57,6 +57,14 @@ router.get('/', restrict, function(req, res, next) {
 
 
     });
+});
+
+router.put('/dismissalert', function(req,res,next){
+    //console.log(req.body);
+    AlertNotification.findOneAndUpdate({UserId:req.body.id},{dismissed:true},function(err,docs){
+        console.log(err);
+    });
+    res.send(200);
 });
 
 router.post('/event', function(req, res, next) {
