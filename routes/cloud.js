@@ -174,6 +174,7 @@ router.post('/receiveAlert', function(req, res, next) {
             console.log(err);
             return next(err);
         }
+        
         next(null);
     });
     User.find({},function(err,user){
