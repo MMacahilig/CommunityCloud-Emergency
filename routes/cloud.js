@@ -157,6 +157,8 @@ router.post('/receiveAlert', function(req, res, next) {
     //res.setHeader('Access-Control-Allow-Credentials', true);
 
 
+
+
     var newAlert = new Alert({
         alertType: req.body.alertType,
         details: req.body.details,
