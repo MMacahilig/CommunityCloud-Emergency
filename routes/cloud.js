@@ -174,7 +174,7 @@ router.post('/receiveAlert', function(req, res, next) {
             console.log(err);
             return next(err);
         }
-        
+
         next(null);
     });
     User.find({},function(err,user){
@@ -212,7 +212,7 @@ router.get('/alertnotifications', function(req,res,next){
 
 
 router.delete('/deleteAlerts', function(req, res, next) {
-    console.log("trigger");
+    
     AlertNotification.remove({},function(){console.log("Deleted Notifications")});
     Alert.remove({},function(){console.log("Deleted Alerts");});
     res.send(200);
