@@ -223,7 +223,14 @@ router.delete('/deleteAlerts', function(req, res, next) {
 });
 
 router.put('/dismissallalerts',function(req,res,next){
-    AlertNotification.findByIdAndUpdate({UserId:req.body.id},{dismissed:true},function(){console.log("DELETED")})
+    console.log("id: " +req.body.id);
+    AlertNotification.find({UserId: req.body.id},function(err,docs){
+        docs.forEach(function(doc){
+            doc.dismissed = true;
+            doc.save();
+        });
+    });
+
     res.send(200);
 });
 
