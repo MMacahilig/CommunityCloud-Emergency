@@ -27,9 +27,7 @@
         $.ajax({
             url: "cloud/dismissallalerts",
             type: "PUT",
-            data:{
-                id:userId
-            }
+            data:{id:userId}
 
         }).done(function(){
             console.log("DELETED");
