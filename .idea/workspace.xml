@@ -25,9 +25,11 @@
       <file leaf-file-name="cloud.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/cloud.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.67346936">
-              <caret line="92" column="17" selection-start-line="92" selection-start-column="17" selection-end-line="92" selection-end-column="17" />
-              <folding />
+            <state vertical-scroll-proportion="0.70068026">
+              <caret line="158" column="62" selection-start-line="148" selection-start-column="6" selection-end-line="158" selection-end-column="62" />
+              <folding>
+                <marker date="1447468573000" expanded="true" signature="4408:4983" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -583,12 +585,12 @@
       <workItem from="1446983943147" duration="396000" />
       <workItem from="1447046411777" duration="390000" />
       <workItem from="1447113280809" duration="1036000" />
-      <workItem from="1447393493155" duration="2480000" />
+      <workItem from="1447393493155" duration="2568000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46229000" />
+    <option name="totallyTimeSpent" value="46317000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1440" height="830" extended-state="6" />
@@ -656,7 +658,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -682,7 +686,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="131" column="16" selection-start-line="131" selection-start-column="16" selection-end-line="131" selection-end-column="16" />
-          <folding />
+          <folding>
+            <marker date="1447468573000" expanded="true" signature="4408:4983" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -747,7 +753,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1447468573000" expanded="true" signature="4408:4983" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -812,7 +820,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1447468573000" expanded="true" signature="4408:4983" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -877,7 +887,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1447468573000" expanded="true" signature="4408:4983" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1029,9 +1041,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/cloud.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67346936">
-          <caret line="92" column="17" selection-start-line="92" selection-start-column="17" selection-end-line="92" selection-end-column="17" />
-          <folding />
+        <state vertical-scroll-proportion="0.70068026">
+          <caret line="158" column="62" selection-start-line="148" selection-start-column="6" selection-end-line="158" selection-end-column="62" />
+          <folding>
+            <marker date="1447468573000" expanded="true" signature="4408:4983" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
