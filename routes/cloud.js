@@ -227,6 +227,8 @@ router.put('/dismissallalerts',function(req,res,next){
     res.send(200);
 });
 
+
+
 router.delete('/deleteEvents', function(req,res,next) {
     console.log("trigger");
     Event.remove({},function(){console.log("Deleted Alerts");});
@@ -296,6 +298,11 @@ router.get("/getAlerts", function(req, res, next) {
     });
 });
 
+router.get("/getalertnotif", function(req,res,next){
+    AlertNotification.find(function(err,users){
+        res.send(users);
+    });
+});
 
 
 module.exports = router;
