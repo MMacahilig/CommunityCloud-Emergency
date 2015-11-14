@@ -89,7 +89,8 @@ router.post('/event', function(req, res, next) {
         next(null);
     });
 
-    res.sendStatus(200);
+    //res.sendStatus(200);
+    res.end
 });
 
 router.post('/mobileAlert', function(req, res, next) {
@@ -155,7 +156,6 @@ router.post('/receiveAlert', function(req, res, next) {
     // Set to true if you need the website to include cookies in the requests sent
     // to the API (e.g. in case you use sessions)
     res.setHeader('Access-Control-Allow-Credentials', true);
-
 
 
 
