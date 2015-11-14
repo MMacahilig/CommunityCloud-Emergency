@@ -90,7 +90,8 @@ router.post('/event', function(req, res, next) {
     });
 
     //res.sendStatus(200);
-    res.end
+    res.send("OK");
+    //res.end
 });
 
 router.post('/mobileAlert', function(req, res, next) {
