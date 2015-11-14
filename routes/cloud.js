@@ -222,6 +222,11 @@ router.delete('/deleteAlerts', function(req, res, next) {
     res.send(200);
 });
 
+router.put('/dismissallalerts',function(req,res,next){
+    AlertNotification.findByIdAndUpdate({UserId:req.body.id},{dismissed:true},function(){console.log("DELETED")})
+    res.send(200);
+});
+
 router.delete('/deleteEvents', function(req,res,next) {
     console.log("trigger");
     Event.remove({},function(){console.log("Deleted Alerts");});

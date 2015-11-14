@@ -14,14 +14,28 @@
 
     $("#deleteAlerts").click(function() {
         console.log("Alerts Deleted");
+        var userId = $("#userID").html();
+        //$.ajax({
+        //    url: "cloud/deleteAlerts",
+        //    type: "DELETE"
+        //
+        //}).done(function(){
+        //    console.log("DELETED");
+        //    location.reload();
+        //});
+        console.log(userId);
         $.ajax({
-            url: "cloud/deleteAlerts",
-            type: "DELETE"
+            url: "cloud/dismissallalerts",
+            type: "PUT",
+            data:{
+                id:userId
+            }
 
         }).done(function(){
             console.log("DELETED");
             location.reload();
         });
+
     });
 
     $("#sendEvent").click(function(){
