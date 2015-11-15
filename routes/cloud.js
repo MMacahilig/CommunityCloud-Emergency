@@ -204,7 +204,7 @@ router.post('/receiveAlert', function(req, res, next) {
         }
 
     });
-    res.end();
+    //res.end();
     //res.sendStatus(200);
 });
 
