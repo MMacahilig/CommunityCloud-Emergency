@@ -22,22 +22,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="cloud.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="cloud.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/cloud.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="158" column="62" selection-start-line="158" selection-start-column="62" selection-end-line="158" selection-end-column="62" />
+            <state vertical-scroll-proportion="0.5448718">
+              <caret line="207" column="6" selection-start-line="207" selection-start-column="6" selection-end-line="207" selection-end-column="6" />
               <folding>
-                <marker date="1447579066000" expanded="true" signature="4408:4983" placeholder="..." />
+                <marker date="1447624397000" expanded="true" signature="4408:4983" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cloud-processes.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cloud-processes.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/modules/cloud-processes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.23076923">
+            <state vertical-scroll-proportion="0.0">
               <caret line="91" column="26" selection-start-line="91" selection-start-column="26" selection-end-line="91" selection-end-column="26" />
               <folding />
             </state>
@@ -115,8 +115,8 @@
         <option value="$PROJECT_DIR$/models/event-notifications.js" />
         <option value="$PROJECT_DIR$/views/cloud.hbs" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/routes/cloud.js" />
         <option value="$PROJECT_DIR$/client/modules/cloud-processes.js" />
+        <option value="$PROJECT_DIR$/routes/cloud.js" />
       </list>
     </option>
   </component>
@@ -576,12 +576,12 @@
       <workItem from="1447046411777" duration="390000" />
       <workItem from="1447113280809" duration="1036000" />
       <workItem from="1447393493155" duration="3967000" />
-      <workItem from="1447623585231" duration="298000" />
+      <workItem from="1447623585231" duration="591000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48014000" />
+    <option name="totallyTimeSpent" value="48307000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1440" height="830" extended-state="6" />
@@ -678,7 +678,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="131" column="16" selection-start-line="131" selection-start-column="16" selection-end-line="131" selection-end-column="16" />
           <folding>
-            <marker date="1447579066000" expanded="true" signature="4408:4983" placeholder="..." />
+            <marker date="1447624397000" expanded="true" signature="4408:4983" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -745,7 +745,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
-            <marker date="1447579066000" expanded="true" signature="4408:4983" placeholder="..." />
+            <marker date="1447624397000" expanded="true" signature="4408:4983" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -812,7 +812,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
-            <marker date="1447579066000" expanded="true" signature="4408:4983" placeholder="..." />
+            <marker date="1447624397000" expanded="true" signature="4408:4983" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -879,7 +879,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1447579066000" expanded="true" signature="4408:4983" placeholder="..." />
+            <marker date="1447624397000" expanded="true" signature="4408:4983" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1013,16 +1013,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/cloud.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="158" column="62" selection-start-line="158" selection-start-column="62" selection-end-line="158" selection-end-column="62" />
-          <folding>
-            <marker date="1447579066000" expanded="true" signature="4408:4983" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/alert-notification.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1033,9 +1023,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/modules/cloud-processes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23076923">
+        <state vertical-scroll-proportion="0.0">
           <caret line="91" column="26" selection-start-line="91" selection-start-column="26" selection-end-line="91" selection-end-column="26" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/cloud.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5448718">
+          <caret line="207" column="6" selection-start-line="207" selection-start-column="6" selection-end-line="207" selection-end-column="6" />
+          <folding>
+            <marker date="1447624397000" expanded="true" signature="4408:4983" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
