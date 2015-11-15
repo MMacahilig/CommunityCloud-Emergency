@@ -89,7 +89,7 @@
 
         });
 
-
+        location.reload();
     });
 
     $(".close").click(function() {
