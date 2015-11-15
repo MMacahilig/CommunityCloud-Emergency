@@ -85,7 +85,7 @@
             }
         }).done(function(){
             console.log("SENT! To Community");
-            location.reload();
+           // location.reload();
 
         });
 

@@ -90,7 +90,7 @@ router.post('/event', function(req, res, next) {
     });
 
     //res.sendStatus(200);
-    res.send("OK");
+    //res.send("OK");
     //res.end
 });
 
