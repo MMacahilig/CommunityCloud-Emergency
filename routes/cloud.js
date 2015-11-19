@@ -11,11 +11,8 @@ var restrict = require('../auth/restrict');
 /* GET home page. */
 
 router.get('/', restrict, function(req, res, next) {
-    //console.log(req.user.created);
     var startDate = new Date(req.user.created);
     var dateString = startDate.getDate() + "/" + startDate.getMonth() + "/" + startDate.getYear();
-    //var dateString = startDate.getDate() + "/" + (startDate.getMonth()+1) + "/" + startDate.getYear();
-    //console.log(dateString);
 
     AlertNotification.find({UserId: req.user._id,dismissed:false}).lean().exec(function(err,docs){
         var alertString = [];
@@ -53,14 +50,10 @@ router.get('/', restrict, function(req, res, next) {
                 });
             }
         });
-        //console.log("query String: " + queryString);
-
-
     });
 });
 
 router.put('/dismissalert', function(req,res,next){
-    //console.log(req.body);
     AlertNotification.findOneAndUpdate({UserId:req.body.id},{dismissed:true},function(err,docs){
         console.log(err);
     });
@@ -68,7 +61,6 @@ router.put('/dismissalert', function(req,res,next){
 });
 
 router.post('/event', function(req, res, next) {
-
     var newEvent = new Event ({
         alertType: req.body.alertType,
         details: req.body.details,
