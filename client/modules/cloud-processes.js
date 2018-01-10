@@ -50,7 +50,7 @@
         console.log(userName);
 
         $.ajax({
-            url:"http://emergencyservicecloud.herokuapp.com/cloud/event",
+            url:"https://emergencyservicecloud.herokuapp.com/cloud/event",
             type: "POST",
             data: {
                 alertType: AlertType,
@@ -67,7 +67,7 @@
         });
 
         $.ajax({
-            url:"http://communitycloud.herokuapp.com/cloud/receiveEvent",
+            url:"https://communitycloud.herokuapp.com/cloud/receiveEvent",
             type: "POST",
             crossDomain: true,
             xhrFields: {
@@ -97,7 +97,7 @@
         var eventId = $(this).parent().parent().find("#eventId").text();
         $(this).parent().parent().fadeOut();
         $.ajax({
-            url:"http://emergencyservicecloud.herokuapp.com/cloud/dismissalert",
+            url:"https://emergencyservicecloud.herokuapp.com/cloud/dismissalert",
             type: "PUT",
             data: {
                 id:userId,
