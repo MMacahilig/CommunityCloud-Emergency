@@ -61,7 +61,20 @@
                 rating: rating,
                 createdBy: userName,
                 createdId: userId
-            }
+            },
+            statusCode: {
+                    0: function() {
+                        //Success message
+                        console.log("sent")
+                    },
+                    200: function() {
+                        //Success Message
+                        console.log("sent")
+                    }
+                },
+                xhrFields: {
+                    withCredentials: true
+                }
         }).done(function(){
             console.log("saved");
         });
@@ -82,7 +95,20 @@
                 rating: rating,
                 createdBy: userName,
                 createdId: userId
-            }
+            },
+            statusCode: {
+                    0: function() {
+                        //Success message
+                        console.log("sent")
+                    },
+                    200: function() {
+                        //Success Message
+                        console.log("sent")
+                    }
+                },
+                xhrFields: {
+                    withCredentials: true
+                }
         }).done(function(){
             console.log("SENT! To Community");
            // location.reload();
